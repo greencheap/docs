@@ -1,12 +1,12 @@
-<p class = "uk-article-lead"> GreenCheap Nesne-ilişkisel eşleyici (ORM), her bir özelliğin uygun tablo sütununa otomatik olarak eşlendiği uygulama verilerinizin model sınıflarını oluşturmanıza yardımcı olur. Varlıklarınız ve mevcut varlıklar arasındaki ilişkileri de GreenCheap'ten (yani kullanıcılar) tanımlayabilirsiniz </p>
+<p class = "uk-article-lead"> Green Cheap object-relational mapper (ORM), helps you create model classes of your application data where each property is automatically mapped to the appropriate table column. You can also define relationships between your assets and existing assets from Greencheap (i.e. users). </p>
 
-## Kurmak
+## İnstall
 
-### Tablo oluşturun
+### Create table
 
-Aşağıdakini, yani uzantınızın `scripts.php` dosyasının `install` kancasında çalıştırın. Tablo oluşturma hakkında daha genel bilgi için [veritabanı bölümü'ne](database.md) bakın.
+The following, so run your extension on the `install` hook of the `scripts.php` file. Tablo oluşturma hakkında daha genel bilgi için [veritabanı bölümü'ne](database.md) bakın.For more general information about creating a table, see the [database section](database.md)
 
-Örnek:
+Example:
 
 ```php
 $util = $app['db']->getUtility();
@@ -25,9 +25,9 @@ if ($util->tableExists('@forum_topics') === false) {
 }
 ```
 
-### Model sınıfı tanımlayın
+### Define Model class
 
-Örnek:
+Example:
 
 ```
 <?php
@@ -68,13 +68,13 @@ class Topic
 
 ```
 
-Model, `GreenCheap\Database\ORM\ModelTrait` özelliğini kullanan düz bir PHP sınıfıdır. Özellikler, basit sınıf kalıtımına benzer şekilde, belirli davranışları bir sınıfa dahil etmeye izin verir. Temel fark, bir sınıfın birden çok özelliği kullanabilmesi ve yalnızca tek bir sınıftan miras alabilmesidir.
+Model is a flat PHP class that uses the `GreenCheap\Database\Orm\ModelTrait` property. Properties allow to include certain behaviors in a class, similar to simple class inheritance. The main difference is that a class can use multiple properties and inherit only from a single class.
 
-**Not** Özelliklere aşina değilseniz, [özelliklerle ilgili resmi PHP belgelerine](http://php.net/manual/en/language.oop5.traits.php) hızlıca göz atın.
+**Note** If you are not familiar with the features, quickly browse [official PHP documentation about features](http://php.net/manual/en/language.oop5.traits.php).
 
-`@Entity(tableClass="@my_table")` notu, Modeli `gc_my_table` veritabanı tablosuna bağlar (`@`otomatik olarak kurulumunuzun veritabanı öneki ile değiştirilir)
+`@Entity(tableClass="@my_table")` notes, Model links to database table `gc_my_table` (`@` automatically replaced with your installation's database prefix)
 
-Ek açıklamalar yalnızca, çok satırlı yorumu yalnızca bir yıldızla değil, iki yıldız işaretiyle başlatırsanız çalışır.
+Annotations only, multiline interpretation works only if you start with two asterisks, not one asterisk.
 
 ```
 // will NOT work:
@@ -89,21 +89,21 @@ Ek açıklamalar yalnızca, çok satırlı yorumu yalnızca bir yıldızla deği
  */
 ```
 
-Bir sınıfta bir özelliği tanımlarken, bu değişkeni, özellik tanımının hemen üstüne `/** @Column(type="string") */` ek açıklamasını koyarak bir tablo sütununa bağlayabilirsiniz. [Doctrine DBAL](http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/types.html) tarafından desteklenen herhangi bir türü kullanabilirsiniz.
+When defining a property in a class, this variable, you can link a table column by placing the annotation `/** @Column(type="string") */` directly above the property definition. You can use any type supported by [Doctrine DBAL](http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/types.html).
 
-Model sınıfınızda başvurduğunuz sınıfın da veritabanında bulunması gerekir.
+The class that you refer to in your Model class must also exist in the database.
 
-## İlişkiler
+## Relation
 
-Veritabanı modelinizde temsil ettiğiniz uygulama verilerinin örnekleri arasında belirli ilişkileri vardır. Bir blog gönderisinin kendisiyle ilgili birkaç yorumu vardır ve tam olarak bir Kullanıcı örneğine aittir. GreenCheap ORM, bu ilişkileri tanımlamak ve ayrıca bunları programlı bir şekilde sorgulamak için mekanizmalar sunar.
+The application data that you represent in your database model has certain relation between instances. A blog post has several comments about itself and belongs exactly to an example of a user. GreenCheap ORM, it provides mechanisms to identify these relationships and also to question them programmatically.
 
 ### Belongs-to relation
 
-Farklı ilişki türlerinde kullanılan temel açıklama, bir model özelliğinin üzerindeki `@BelongsTo` notudur. Aşağıdaki örnekte (Blog'un `Post` modelinden alınmıştır), GreenCheap `User` modelinin örneğini işaret edecek şekilde tanımlanan bir `$user` özelliğini belirtiyoruz.
+Basic description used in different relationship types, A `@BelongsTo` note on a model property. In the following example (taken from the blog's `Post` model), We specify a `$user` property defined to point to an instance of the GreenCheap `User` model.
 
-"`keyFrom` parametresi, kullanıcı kimliğini işaret etmek için hangi kaynak özelliğinin kullanılacağını belirtir. İlişkinin bir sorgu tarafından çözülmesi için `user_id` özelliğini nasıl tanımlamamız gerektiğine dikkat edin.
+The `keyFrom` parameter specifies which resource property to use to point to the user ID. Note how we must define the `user_id` property for the relation to be resolved by a query.
 
-Misal:
+For Example:
 
 ```
 /** @Column(type="integer") */
@@ -117,12 +117,12 @@ public $user;
 
 ### One-to-many relation
 
-Bu ilişkide, tek bir model örneğinin keyfi bir
-başka bir modelin örnek sayısı. Bunun klasik bir örneği bir `Post` dur.
-kendisine ait herhangi bir sayıda `Comment` örneği bulunan. Tersi
-taraf, yorum tam olarak bir `Post` aittir.
+In this relation, an arbitrary example of a single model is
+the number of instances of another model. A classic example of this is a `Post`.
+any number of `Comment` instances. 
+On the reverse side, the comment belongs in exactly one `Post`.
 
-`GreenCheap\Blog\Model\Post` içindeki blog paketinden örnek.
+`GreenCheap\Blog\Model\Post` example from the blog package inside.
 
 ```
 /**
@@ -131,7 +131,7 @@ taraf, yorum tam olarak bir `Post` aittir.
 public $comments;
 ```
 
-İlişkinin tersini tanımlayın
+Define the inverse of the relation
 `GreenCheap\Blog\Model\Comment`:
 
 ```
@@ -142,7 +142,7 @@ public $post_id;
 public $post;
 ```
 
-Modeli sorgulamak için ORM sınıfını kullanabilirsiniz.
+You can use the ORM class to query the model.
 
 ```
 use GreenCheap\Blog\Post;
@@ -154,7 +154,7 @@ $posts = Post::findAll();
 var_dump($posts);
 ```
 
-Çıktı:
+Output:
 
 ```
 array (size=6)
@@ -185,7 +185,7 @@ $posts = Post::query()->related('comments')->get();
 var_dump($posts);
 ```
 
-Çıktı:
+Output:
 
 ```
 array (size=6)
@@ -215,17 +215,17 @@ array (size=6)
 
 ### One-to-one relation
 
-Çok basit bir ilişki, bire bir ilişkidir. Bir `ForumUser`a tam olarak bir `Avatar` atanmış olabilir. Avatar hakkındaki tüm bilgileri `ForumUser` modeline dahil ederken, bazen bunları ayrı modellere ayırmak mantıklıdır.
+A very simple relation is a one-to-one relation. A `Forumuser` can be assigned exactly an `Avatar`. When including All information about the Avatar in the `ForumUser` model, sometimes it makes sense to separate them into separate models.
 
-Bire bir ilişkiyi uygulamak için, her model sınıfında `@BelongsTo` ek açıklamasını kullanabilirsiniz.
+To implement a one-to-one relation, you can use the `@BelongsTo` annotation in each model class.
 
 `/** @BelongsTo(targetEntity="Avatar", keyFrom="avatar_id", keyTo="id") */`
 
-- `targetEntity`: Hedef model sınıfı
-- `keyFrom`: bu tablodaki ilgili modele işaret eden yabancı anahtar
-- `keyTo`: ilgili modeldeki birincil anahtar
+- `targetEntity`: Target model class
+- `keyFrom`: foreign key pointing to the corresponding model in this table
+- `keyTo`: primary key in the corresponding model
 
-Örnek model `ForumUser`:
+Example model `ForumUser`:
 
 ```php
 <?php
@@ -257,7 +257,7 @@ class ForumUser
 }
 ```
 
-Örnek model `Avatar`:
+Example model `Avatar`:
 
 ```php
 <?php
@@ -289,7 +289,7 @@ class Avatar
 }
 ```
 
-İlgili modelin bir sorgu sonucuna dahil edildiğinden emin olmak için, model sınıfından "`QueryBuilder` örneğini getirin ve `related()` yönteminde ilişki özelliğini açıkça listeleyin.
+To ensure that the relevant model is included in a query result, fetch the instance `QueryBuilder` from the model class and explicitly list the relationship property in the `related()` method.
 
 ```php
 <?php
@@ -313,13 +313,13 @@ foreach ($avatars as $avatar) {
 
 ### Many-to-many relation
 
-Bazen, iki model, ilişkinin her iki tarafında potansiyel olarak * çok sayıda örneklerin * olduğu bir ilişki içindedir. Bir örnek, etiketler ve gönderiler arasındaki bir ilişki olabilir: Bir gönderiye atanmış birkaç etiket olabilir. Aynı zamanda, bir etiket birden fazla gönderiye atanabilir.
+Sometimes, two model, in a relationship where there are potentially * a large number of examples * on both sides of the relation. A example, there may be a relationship between tags and posts: There may be several tags assigned to a post. In the same time, a label can be assigned to multiple posts.
 
-Aşağıda listelenen farklı bir örnek, bir tartışma forumundaki favori konuların senaryosudur. Bir kullanıcının birden çok favori konusu olabilir. Bir konu birden çok kullanıcı tarafından favorilere eklenebilir.
+A different example listed below, scenario of favorite topics in a discussion forum. A user can have multiple favorite topics. A topic can be added to favorites by multiple users.
 
-Çoktan çoğa ilişkisini uygulamak için ek bir veritabanı tablosuna ihtiyacınız vardır. Bu tablodaki her giriş, bir `Topic` örneğinden `ForumUser` örneğine ve bunun tersi bir bağlantıyı temsil eder. Veritabanı modellemesinde buna [bağlantı tablosu](https://en.wikipedia.org/wiki/Associative_entity) adı verilir.
+To apply the multiple relation, you need an additional database table. Each entry in this table, represents a link from a `Topic` instance to a `ForumUser` instance and vice versa. In database modeling, this is called a [junction table](https://en.wikipedia.org/wiki/Associative_entity).
 
-Örnek tablolar (yani `scripts.php` içinde):
+Sample tables (so `script.php` inside):
 ```
 $util = $app['db']->getUtility();
 
@@ -353,19 +353,19 @@ if ($util->tableExists('@forum_favorites') === false) {
 }
 ```
 
-İlişkinin kendisi daha sonra sorgulayabilmek istediğiniz her Model sınıfında tanımlanır. Yalnızca belirli bir kullanıcı için sık kullanılan gönderileri listelemek istiyorsanız, ancak belirli bir gönderiyi favorilerine ekleyen tüm kullanıcıları listelemiyorsanız, ilişkiyi yalnızca bir modelde tanımlarsınız. Ancak aşağıdaki örnekte, `@ManyToMany` ek açıklaması her iki model sınıfında da bulunur.
+The relation itself is then defined in each Model class that you want to query. If you only want to list favorite posts for a specific user, but if you don't list all users who have added a particular post to their favorites, you define a relationship only in a model. But in the following example, he `@ManyToMany` annotation is available in both model classes.
 
-`@ManyToMany` ek açıklaması aşağıdaki parametreleri alır.
+The` @ManyToMany ' annotation takes the following parameters.
 
-Argüman          | Açıklama
+Argument         | Description
 ---------------- | -----------
-`targetEntity` | Hedef model sınıfı
-`tableThrough` | Bağlantı tablosunun adı
-`keyThroughFrom` | "Kimden" yönündeki yabancı anahtarın adı
-`keyThroughTo` | "Kime" yönündeki yabancı anahtarın adı
+`targetEntity` | Target model class
+`tableThrough` | Name of the junction table
+`keyThroughFrom` | The name of the foreign key in the" From who" direction
+`keyThroughTo` | The name of the foreign key in the" to who" direction
 `orderBy` | (isteğe bağlı) Ekstreye göre sırala
 
-Örnek ek açıklama:
+Sample annotation:
 
 ```php
 /**
@@ -374,7 +374,7 @@ Argüman          | Açıklama
 public $users;
 ```
 
-Örnek model "`Topic`:
+Sample model `Topic`:
 
 ```php
 <?php
@@ -408,7 +408,7 @@ class Topic
 }
 ```
 
-Örnek model `ForumUser`:
+Sample model `ForumUser`:
 
 ```php
 <?php
@@ -439,7 +439,7 @@ class ForumUser
 }
 ```
 
-Örnek sorgular:
+Sample queries:
 
 ```php
 // resolve many-to-many relation in query
@@ -461,30 +461,30 @@ foreach ($topic->users as $user) {
 }
 ```
 
-## ORM Sorguları
+## ORM Queries
 
-Belirli bir kimliğe sahip bir model örneğini getir.
+Fetch an instance of a model with a specific ID.
 
 ```
 $post = Post::find(23)
 ```
 
-Bir modelin tüm örneklerini getir.
+Fetch all instances of a model.
 
 ```
 $posts = Post::findAll();
 ```
 
-Yukarıdaki sorgularla ilişkiler, ilgili örnekleri içerecek şekilde genişletilmeyecektir. Yukarıdaki örnekte, `Post` örneğinin `$comments` özelliği başlatılmayacaktır.
+Relations with the above queries, it will not be expanded to include relevant examples. In the above example, The `$comments` property of the `Post` instance will not be initialized.
 
 ```
 // related objects are not fetched by default
 $post->comments == null;
 ```
 
-Bunun nedeni performanstır. Varsayılan olarak, gerekli alt sorgular gerçekleştirilmez, bu da yürütme süresinden tasarruf sağlar. Dolayısıyla, ilgili nesnelere ihtiyacınız varsa, bu sorguda hangi ilişkilerin çözüleceğini açıkça belirtmek için `QueryBuilder` üzerindeki `related()` yöntemini kullanabilirsiniz.
+The reason for this is performance. By default, required subqueries are not performed, this saves execution time. So, if you need related objects, you can use the `related()` method on `QueryBuilder` to explicitly specify which relation to resolve in this query.
 
-Bu nedenle, bir `Post` örneğini almak ve ilişkili `Comment` örneklerini dahil etmek için, ilgili nesneleri getiren bir sorgu oluşturmanız gerekir.
+Therefore, to retrieve a `Post` instance and include Associated `Comment` instances, you must create a query that fetches related objects.
 ```
 // fetch all, including related objects
 $posts = Post::query()->related('comments')->get();
@@ -494,13 +494,13 @@ $id = 23;
 $post = Post::query()->related('comments')->where('id = ?', [$id])->first();
 ```
 
-`find(23)` ün nasıl `->where('id = ?', [$id])->first()` ile değiştirildiğine dikkat edin. Bunun nedeni, `find()` ın Model üzerinde tanımlanmış bir yöntem olmasıdır. Ancak ikinci örnekte, bir `GreenCheap\Database\ORM\QueryBuilder` örneğine sahibiz.
+Note how `find(23)` is replaced with `-> where('id = ?',[$id])->first()`. the reason for this, `find()` is a method defined on the Model. But in the second example, we have a `GreenCheap\Database\Orm\QueryBuilder` instance.
 
-ORM sorguları ve düzenli sorgular hakkında daha fazla ayrıntı için, [veritabanı sorguları](database.md#queries) ile ilgili belgelere bakın
+For more details about Orm queries and regular queries, see the documentation for [database queries](database.md#queries)
 
-## Yeni model örneği oluşturun
+## Create a new model instance
 
-Yeni bir model örneğinde `save()` yöntemini çağırarak yeni bir model oluşturabilir ve kaydedebilirsiniz.
+You can create and save a new model by calling the `save()` method on a new model instance.
 
 ```php
 $user = new ForumUser();
@@ -508,16 +508,16 @@ $user->name = "bruce";
 $user->save();
 ```
 
-Alternatif olarak, doğrudan model sınıfında `create()` yöntemini çağırabilir ve örneği başlatmak için bir dizi mevcut veri sağlayabilirsiniz. Örneği veritabanında saklamak için daha sonra `save()`i çağırın.
+Alternatively, you can call the `create()` method directly in the model class and provide a set of existing data to start the instance. Call `save()` later to store the instance in the database.
 
 ```php
 $user = ForumUser::create(["name" => "peter"]);
 $user->save();
 ```
 
-## Mevcut örneği değiştirin
+## Replace the existing instance
 
-Mevcut bir örneği getirin, nesnede herhangi bir değişiklik yapın ve ardından değişiklikleri veritabanında depolamak için `save()` yöntemini çağırın.
+Bring an existing sample, make any changes to the object and then call the `save()` method to store the changes in the database.
 
 ```php
 $user = ForumUser::find(2);
@@ -525,9 +525,9 @@ $user->name = "david";
 $user->save();
 ```
 
-## Mevcut örneği silin
+## Delete existing instance
 
-Mevcut bir model örneğini alın ve bu örneği veritabanından kaldırmak için `delete()`yöntemini çağırın.
+Take an existing model instance and call the `delete()` method to remove it from the database.
 
 ```php
 $user = ForumUser::find(2);
