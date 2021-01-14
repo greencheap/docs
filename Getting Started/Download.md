@@ -1,5 +1,7 @@
 <p class="uk-article-lead">GreenCheap'in kurulum süreci hızlı ve kolaydır ve sadece birkaç dakika sürer. GreenCheap'i şimdi `Cpanel` yüklü bir sunucuda kurmayı göreceğiz. Bu yüzden kurulum işlemi yapmadan önce [Gereksinimler](/docs/gereksinimler) bölümünü incelemenizi tavsiye ederiz.</p>
 
+<iframe src="https://www.youtube.com/embed/xOdJlgTrhyo?controls=1" allowfullscreen="" width="100%" height="390"></iframe>
+
 ## Gerekli dosyaların temin edilmesi
 Öncelikle GreenCheap tarafından resmi dağıtılan paketi <a href="https://greencheap.net/version" target="_blank">GreenCheap.net'den indirmeniz</a> gerekmektedir.
 İndirdiğiniz `.zip` uzantılı dosyayı açmadan direk kendi hostunuza upload edin ve orada bu zip dosyasını çıkartın.
@@ -17,7 +19,7 @@ Eğer sayfanızı açtığınızda aşağıdaki ekrana ulaştıysanız herşey y
 
 Ok butonuna basarak [İkinci adıma](#-kinci-ad-m) geçebiliriz.
 
-![Greencheap ilk ekran](storage/docs-belgeler/greencheap-ilk-ekran.png)
+![Green cheap ilk ekran](storage/docs-belgeler/greencheap-ilk-ekran.png)
 
 ### İkinci Adım
 
@@ -27,7 +29,7 @@ GreenCheap size bir çok dil seçeneği sunabilir. Hali hazırda şuanda sadece 
 
 Dil seçiminizi yaptıysanız [Üçüncü adıma](#-nc-ad-m) geçebilmek için `Sonraki` butonuna basın.
 
-![Greencheap ikinci ekran](storage/docs-belgeler/greencheap-ikinci-ekran.png)
+![Green cheap ikinci ekran](storage/docs-belgeler/greencheap-ikinci-ekran.png)
 
 ### Üçüncü Adım
 
@@ -51,7 +53,7 @@ Aşağıdaki tabloda açıklamalara yer verilmiştir.
 
 Veritabanı bağlantısını yaptıysanız [Dördüncü adıma](#d-rd-nc-ad-m) geçebilmek için `Sonraki` butonuna basın.
 
-![Greencheap ücüncü ekran](storage/docs-belgeler/greencheap-ücüncü-ekran.png)
+![Green cheap ücüncü ekran](storage/docs-belgeler/greencheap-ücüncü-ekran.png)
 
 ### Dördüncü Adım
 
