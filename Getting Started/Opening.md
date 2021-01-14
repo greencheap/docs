@@ -7,7 +7,7 @@ As mentioned above, GreenCheap is an open source free CMS. It offers a powerful 
 - Create your desired project quickly and safely, it doesn't restrict you in any way.
 - Uses Trend technologies.
 
-Greencheap Wordpress, Joomla, October, Drupal, Suluio etc. compare with CMSler. In greencheap, this software offers you the same tasks in a different way. 
+Greencheap Wordpress, Joomla, October, Drupal, Sulu.io etc. It offers the same tasks differently compared to CMS.
 
 Depending on your goals with GreenCheap, you may want to just read the documentation pieces or start in different places.
 
