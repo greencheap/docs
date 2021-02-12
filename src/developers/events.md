@@ -1,4 +1,5 @@
 # Events
+
 A popular concept for communication in Modern web application are events. An event is triggered at a specific stage of code execution. All other codes, including your extensions, can sign up for one or more activities and take action at a specific time.
 
 An event always identifier, a unique string (`Boot` for event triggered at boot stage of GreenCheap application) are defined with.
@@ -14,7 +15,7 @@ GreenCheap, provides a range of activities throughout the life cycle of the page
 - `request`: Request processing phase of kernel started.
 - `controller`: A controller action to be called.
 - `response`: Response to be sent to the browser.
-- `terminate`: Reply to Green Cheap application successfully submitted.
+- `terminate`: Reply to GreenCheap application successfully submitted.
 - `exception`: An exception has occurred.
 
 

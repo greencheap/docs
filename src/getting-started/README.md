@@ -1,6 +1,6 @@
 # Getting Started
 
-Green Cheap is a modern and light open source CMS. You'll learn documentation, how to install it, how to use the interface, and how to develop plugins and themes for the Green Cheap platform.
+GreenCheap is a modern and light open source CMS. You'll learn documentation, how to install it, how to use the interface, and how to develop plugins and themes for the GreenCheap platform.
 
 ## What does GreenCheap CMS do?
 As mentioned above, GreenCheap is an open source free CMS. It offers a powerful PHP infrastructure developed with the [Symfony](https://symfony.com) framework. It also allows you to create more progressive builds with [Vuejs](https://vuejs.org/)

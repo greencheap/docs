@@ -1,10 +1,11 @@
 # Modules
-<p class="uk-article-lead">Green Cheap uses *modules* to set application code. Module definition is used to provide boot, routing, and other configuration options. You can listen to events here, you can add custom classes and your own controllers.</p>
+
+<p class="uk-article-lead">GreenCheap uses *modules* to set application code. Module definition is used to provide boot, routing, and other configuration options. You can listen to events here, you can add custom classes and your own controllers.</p>
 
 ## Definition: index.php
-Green Cheap has a 'ModuleManager' to install and configure a module . At the root of the module index is an ' index.php ' will search the file and wait for it to return a PHP array. Consider this array as a boot for modules code.
+GreenCheap has a 'ModuleManager' to install and configure a module . At the root of the module index is an ' index.php ' will search the file and wait for it to return a PHP array. Consider this array as a boot for modules code.
 
-By setting the correct properties in this array, Say Green cheap everything he needs to know about your module.
+By setting the correct properties in this array, Say GreenCheap everything he needs to know about your module.
 
 ```php
 <?php
@@ -20,9 +21,9 @@ return [
 ];
 ```
 
-This minimal example,  It is a valid module definition even if it does nothing but be installed by Green Cheap. A module is installed only if the package it contains is enabled in the admin panel.
+This minimal example,  It is a valid module definition even if it does nothing but be installed by GreenCheap. A module is installed only if the package it contains is enabled in the admin panel.
 
-**Note:** If you start exploring the inner structure of Green Cheap, a central concept of Green Cheap architecture.
+**Note:** If you start exploring the inner structure of GreenCheap, a central concept of GreenCheap architecture.
 
 ## Available Properties
 
@@ -35,7 +36,7 @@ Keys       | Description                       | More
 `routes`    | Route controllers |
 `permissions`  | Define and save permission names |
 `resources`  | Save resource shortcuts|
-`events`    | Listen to events from Green Cheap or other modules |
+`events`    | Listen to events from GreenCheap or other modules |
 `config`    | Default module configuration |
 `nodes`    | Registering nodes for the Site Tree |
 `node`    | Default options for node configuration |
@@ -46,7 +47,7 @@ Keys       | Description                       | More
 
 ## Boot mode
 
-You can assign a callback function to the `main` property to run any PHP code. Function takes Green Cheap Application Container Instance as parameter.
+You can assign a callback function to the `main` property to run any PHP code. Function takes GreenCheap Application Container Instance as parameter.
 
 ```php
 use GreenCheap\Application;
@@ -70,7 +71,7 @@ Instead of assigning a callback function and keeping all your code directly in `
 
 ## Save custom namespaces
 
-Forward a list of namespaces and paths to be automatically loaded by Green Cheap. The path is relative to the path of the module, therefore, the following example is "src" of the module package `Packages-VENDOR-PACKAGE-Index.php` is located in the position `Packages/VENDOR/PACKAGE/src`, assuming that it is in place.
+Forward a list of namespaces and paths to be automatically loaded by GreenCheap. The path is relative to the path of the module, therefore, the following example is "src" of the module package `Packages-VENDOR-PACKAGE-Index.php` is located in the position `Packages/VENDOR/PACKAGE/src`, assuming that it is in place.
 
 ```php
 'autoload' => [
@@ -136,7 +137,7 @@ class MyController {
 ```
 
 ## Save resource shortcuts
-You can save prefixes to use as shorter versions when working with ways. For example, `packages/vendor/package/views/administrator/settings.php` to get started  `views:admin/settings.use php`. Green Cheap saves several ways for extensions and themes by default.
+You can save prefixes to use as shorter versions when working with ways. For example, `packages/vendor/package/views/administrator/settings.php` to get started  `views:admin/settings.use php`. GreenCheap saves several ways for extensions and themes by default.
 
 This works every time the GreenCheap file system is used (i.e. when creating a URL for a file path or when creating a view from a controller).
 
@@ -149,7 +150,7 @@ This works every time the GreenCheap file system is used (i.e. when creating a U
 ```
 
 ## Listening to events
-Events are triggered at several points in the green Cheap kernel and potentially by other modules. An event always has a unique name that defines it. You can save callback functions to any activity.
+Events are triggered at several points in the GreenCheap kernel and potentially by other modules. An event always has a unique name that defines it. You can save callback functions to any activity.
 
 For more information about the event system, see the Events section.
 
@@ -245,7 +246,9 @@ When creating a page in the theme `template.php` file, you can access this featu
 To allow the user to change the values of the default widget options that you have defined here, you can add an interface to the admin area. To achieve that, you define a JavaScript component to display the editing screen (Example), register that JavaScript file on the content editor page (Example) and optionally update your Webpack configuration, if you are using Webpack (Example). A complete explanation for this can be found in the Theme tutorial.
 
 
-## Add menu items to the admin panelYou can add menu items to the main navigation of the admin panel. These can be linked to any registered route and restricted to certain access permissions. The `Access` property determines whether the menu item is visible.
+## Add menu items to the admin panel
+
+You can add menu items to the main navigation of the admin panel. These can be linked to any registered route and restricted to certain access permissions. The `Access` property determines whether the menu item is visible.
 
 ```php
 'menu' => [
@@ -283,7 +286,7 @@ To allow the user to change the values of the default widget options that you ha
 ```
 
 ## Link to a Settings screen
-Create a link to a route that displays your settings screen. Set this feature, Allows Green cheap to create a _Settings_ button next to your theme or extension in the admin panel list.
+Create a link to a route that displays your settings screen. Set this feature, Allows GreenCheap to create a _Settings_ button next to your theme or extension in the admin panel list.
 
 ```php
 'settings' => '@hello/admin/settings',

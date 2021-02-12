@@ -1,4 +1,6 @@
-<p class="uk-article-lead"> Green Cheap, it has the ability to view messages in different languages. This allows the interface to be localized for any number of languages. </p>
+# Translation
+
+<p class="uk-article-lead"> GreenCheap, it has the ability to view messages in different languages. This allows the interface to be localized for any number of languages. </p>
 
 **Note** There is a difference between languages and locales, as there may be different versions of a particular language spoken in a particular region (for example, `en_GB` and `en_US`).
 

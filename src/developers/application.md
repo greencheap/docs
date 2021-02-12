@@ -2,7 +2,7 @@
 
 <p class="uk-article-lead">*Application*, Functions as greencheap's dependency container. Application, Greencheap's functionality and services can be configured throughout the `modules page`, expandable, makes it interchangeable and accessible.</p>
 
-All services available at Green cheap, In the `application` instance, dependency is set as injected properties. For example `$app['db']` allows you to access the database service.
+All services available at GreenCheap, In the `application` instance, dependency is set as injected properties. For example `$app['db']` allows you to access the database service.
 
 ## Access to a service
 

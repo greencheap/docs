@@ -1,5 +1,6 @@
 # User Permissions
-<p class="uk-article-lead">Green Cheap, comes with a ready-made registration procedure and a powerful user manager. With all these users on your system, your extension can easily use roles and permissions.</p>
+
+<p class="uk-article-lead">GreenCheap, comes with a ready-made registration procedure and a powerful user manager. With all these users on your system, your extension can easily use roles and permissions.</p>
 
 ## Concepts
 
@@ -7,7 +8,7 @@
 
 **Permissions** defines actions that a user can perform. Permission is defined by a name, for example `user: access admin area`. Permission names must be descriptive and begin with the name of the corresponding module, etc. `user:` for user module.
 
-**Roles** groups several user accounts. All users with the same role share the same permissions. Roles are also used to manage access to elements of your site's content. A user can belong to zero, one, or more roles. A role can have many users assigned to it. Green Cheap comes with default roles **anonymous**, **authenticated** and **administrator** and lets you create as much as you need.
+**Roles** groups several user accounts. All users with the same role share the same permissions. Roles are also used to manage access to elements of your site's content. A user can belong to zero, one, or more roles. A role can have many users assigned to it. GreenCheap comes with default roles **anonymous**, **authenticated** and **administrator** and lets you create as much as you need.
 
 ## Show content only to a specific role
 

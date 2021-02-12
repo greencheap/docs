@@ -1,5 +1,6 @@
 # Routing
-<p class="uk-article-lead">A central task solved by Green Cheap is _routing_. When the browser hits a URL, framework, determines which process to call.</p>
+
+<p class="uk-article-lead">A central task solved by GreenCheap is _routing_. When the browser hits a URL, framework, determines which process to call.</p>
 
 ## Controls
 The most common way to create a route in greencheap is to define a _controller_. A controller handles requests, responsible for setting routes and creating views.

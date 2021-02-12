@@ -1,6 +1,6 @@
 # Paketler
 
-<p class="uk-article-lead">Bir paket Green Cheap'in işlevselliğini genişletme konseptidir. Paketler iki farklı türde gelir: Eklentiler ve Temalar.</p>
+<p class="uk-article-lead">Bir paket GreenCheap'in işlevselliğini genişletme konseptidir. Paketler iki farklı türde gelir: Eklentiler ve Temalar.</p>
 
 ## Paket yeri
 
@@ -13,7 +13,7 @@ Satıcı adı, bir geliştiricinin veya kuruluşun benzersiz bir temsilidir. En 
 ## Paket içeriği
 Bir paket en az iki dosya içerir.
 1. `composer.json`, paketinizin meta verilerini içerir ve bu nedenle paket tanımı olarak işlev görür.
-2. `index.php`, Modül tanımı olarak adlandırılır ve Green Cheap'e gerçek işlevsellik katar.
+2. `index.php`, Modül tanımı olarak adlandırılır ve GreenCheap'e gerçek işlevsellik katar.
 
 Paket içeriğinin geri kalanı paketin türüne bağlıdır. Bir paketin gerçek içeriği hakkında daha fazla bilgi edinmek için Tema öğreticisine veya Uzantı öğreticisine göz atın.
 
@@ -48,7 +48,7 @@ Bu dosya hakkında daha fazla ayrıntı için bkz. [Besteci Belgeleri](https://g
 ## Yükleme kancaları
 Bir paket etkinleştirilebilir, devre dışı bırakılabilir veya yüklenemez. Durumu değiştirirken, veritabanı şemanızı değiştirmeniz veya başka bir özel kod çalıştırmanız gerekebilir.
 
-Green Cheap, özel bir komut dosyası aracılığıyla kurulum kancaları sunar. Bu dosyanın `composer.json` dosyası olan Paket tanımınızda tanımlanması gerekir.
+GreenCheap, özel bir komut dosyası aracılığıyla kurulum kancaları sunar. Bu dosyanın `composer.json` dosyası olan Paket tanımınızda tanımlanması gerekir.
 
 ```json
     "extra": {
@@ -81,7 +81,7 @@ Yükleme kancası, bir paket _installed_ işleminden sonra yürütülür.
 ### Uninstall
 Kaldırma kancası bir paket _uninstalled_'den önce yürütülür.
 
-Green Cheap, uzantınız yönetici panelinde _disabled_ veya _uninstalled_ olsa bile, oluşturduğunuz tabloları değiştirmez. Gerekli veritabanı değişikliklerini kendiniz halletmeniz gerekecektir.
+GreenCheap, uzantınız yönetici panelinde _disabled_ veya _uninstalled_ olsa bile, oluşturduğunuz tabloları değiştirmez. Gerekli veritabanı değişikliklerini kendiniz halletmeniz gerekecektir.
 
 ### Enable
 Enable hook bir paket _enabled_ yapıldıktan sonra yürütülür.
@@ -90,4 +90,4 @@ Enable hook bir paket _enabled_ yapıldıktan sonra yürütülür.
 Devre dışı bırakma kancası, bir paket _disabled_ olmadan önce yürütülür.
 
 ### Updates
-Bir paket etkinleştirildiğinde, Green Cheap geçerli sürümden daha yeni güncelleme kancalarının olup olmadığını kontrol eder. Eğer öyleyse, sırayla yürütülürler.
+Bir paket etkinleştirildiğinde, GreenCheap geçerli sürümden daha yeni güncelleme kancalarının olup olmadığını kontrol eder. Eğer öyleyse, sırayla yürütülürler.

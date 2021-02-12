@@ -1,4 +1,5 @@
 # Response
+
 <p class="uk-article-lead">The response represents the server'S HTTP response to the client. There are several different types listed below, each with an example of how the response from the controller action is generated.</p>
 
 ## String
@@ -73,7 +74,9 @@ public function redirectAction()
 }
 ```
 
-## Custom response and error pagesreturn any custom HTTP response using the `create` command.
+## Custom response and error pages
+
+return any custom HTTP response using the `create` command.
 
 ```php
 public function forbiddenAction()

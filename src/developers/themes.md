@@ -1,10 +1,11 @@
 # Themes
+
 <p class="uk-article-lead">A theme changes the appearance of your site. In its simplest form, a theme, creates surrounding HTML markup for the content output of your extensions.</p>
 
 **Note** Examples in this tutorial, Taken from the _Hello_ theme available on GitHub. When installed, _Hello_ theme is located in '/packages/greencheap/theme-hello'.
 
 ## package description
-Theme, `greencheap-theme' is a regular green Cheap package. Each package needs an explanation to be recognized by Green Cheap. This description is in the `composer.json` file and looks like the following. See packages for details.
+Theme, `greencheap-theme' is a regular GreenCheap package. Each package needs an explanation to be recognized by GreenCheap. This description is in the `composer.json` file and looks like the following. See packages for details.
 
 ```json
 {
@@ -50,7 +51,7 @@ return [
 Defines the locations that will create your theme, menus, and widgets. Actual creation takes place in the `template.php` file, as shown below. However, your theme needs to save these locations earlier. This happens with the `menus` and `positions` feature. These include the location name and tag sequences that appear in the admin panel.
 
 ### Menus
-In your theme, From the Green Cheap system, you can create menus in as many positions as you want. To ensure that these positions are known to Green Cheap, you must register them using the `menu` feature.
+In your theme, From the GreenCheap system, you can create menus in as many positions as you want. To ensure that these positions are known to GreenCheap, you must register them using the `menu` feature.
 
 Each menu location, an identifier (ex. 'main') and a tag to be displayed to the user (ex. _Main_) is defined by.
 
@@ -64,7 +65,7 @@ Each menu location, an identifier (ex. 'main') and a tag to be displayed to the 
 ```
 
 ### Positions (Widgets)
-Widget locations allow users to publish widgets at various locations of your theme markup. They appear in the _widgets_ area of the green Cheap admin panel and can be selected by the user when creating a widget.
+Widget locations allow users to publish widgets at various locations of your theme markup. They appear in the _widgets_ area of the GreenCheap admin panel and can be selected by the user when creating a widget.
 
 Location of each widget, it is identified by an identifier (i.e. `sidebar`) and a tag (i.e. _Sidebar_) to display to the user.
 
@@ -182,12 +183,12 @@ Burada, widget konumu `hero` , `position-grid.php` düzen dosyasıyla oluşturul
 <?php endforeach ?>
 ```
 
-## Default Green Cheap Formatting
-The Green Cheap admin panel is built using the UIKit front end frame. Therefore, green Cheap core extensions like static pages and blog, Markup outputs from UIKit with CSS classes. However, you don't need to use UIKit in any way to create your own themes.
+## Default GreenCheap Formatting
+The GreenCheap admin panel is built using the UIKit front end frame. Therefore, GreenCheap core extensions like static pages and blog, Markup outputs from UIKit with CSS classes. However, you don't need to use UIKit in any way to create your own themes.
 
-Green Cheap to format system output, you can add CSS for several classes instead of including the entire UIKit CSS. `Hello` that comes with the extension `theme.css` file already contains required classes.
+GreenCheap to format system output, you can add CSS for several classes instead of including the entire UIKit CSS. `Hello` that comes with the extension `theme.css` file already contains required classes.
 
-If you want to completely change Green cheap's self-produced marking, you also have the ability to overwrite system view files.
+If you want to completely change GreenCheap's self-produced marking, you also have the ability to overwrite system view files.
 
 ## Overwrite system views
 To overwrite system view files, just create corresponding folders within your theme to emulate the original structure and put the template files there, as shown in the table below.

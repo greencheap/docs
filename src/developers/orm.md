@@ -1,5 +1,6 @@
 # ORM
-<p class = "uk-article-lead"> Green Cheap object-relational mapper (ORM), helps you create model classes of your application data where each property is automatically mapped to the appropriate table column. You can also define relationships between your assets and existing assets from Greencheap (i.e. users). </p>
+
+<p class = "uk-article-lead"> GreenCheap object-relational mapper (ORM), helps you create model classes of your application data where each property is automatically mapped to the appropriate table column. You can also define relationships between your assets and existing assets from Greencheap (i.e. users). </p>
 
 ## İnstall
 

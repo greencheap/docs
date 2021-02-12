@@ -5,7 +5,7 @@
 **Not** Bu öğreticideki örnekler, Github'dd bulunan _Hello_ temasından alınmıştır. Yüklendiğinde, _Hello_ teması `/packages/greencheap/theme-hello` konumunda bulunur.
 
 ## Paket tanımı
-Tema, `greencheap-theme` türünde düzenli bir Green Cheap paketidir. Her paketin Green Cheap tarafından tanınabilmesi için bir açıklamaya ihtiyacı vardır. Bu açıklama `composer.json` dosyasında bulunur ve aşağıdaki gibi görünür. Ayrıntılı bilgi için Paketler bölümüne bakın.
+Tema, `greencheap-theme` türünde düzenli bir GreenCheap paketidir. Her paketin GreenCheap tarafından tanınabilmesi için bir açıklamaya ihtiyacı vardır. Bu açıklama `composer.json` dosyasında bulunur ve aşağıdaki gibi görünür. Ayrıntılı bilgi için Paketler bölümüne bakın.
 
 ```json
 {
@@ -51,7 +51,7 @@ return [
 Temanız, menüleri ve widget'ları oluşturacak konumları tanımlar. Gerçek oluşturma, aşağıda gösterildiği gibi `template.php` dosyasında gerçekleşir. Ancak temanızın daha önce bu konumları kaydetmesi gerekir. Bu, `menus` ve `positions` özelliğiyle olur. Bunlar, yönetici panelinde görüntülenen konum adı ve etiket dizilerini içerir.
 
 ### Menüler (Menus)
-Temanızda, Green Cheap sisteminden menüleri istediğiniz kadar pozisyonda oluşturabilirsiniz. Bu pozisyonların Green Cheap tarafından bilinmesini sağlamak için, onları `menus` özelliğini kullanarak kaydettirmeniz gerekir.
+Temanızda, GreenCheap sisteminden menüleri istediğiniz kadar pozisyonda oluşturabilirsiniz. Bu pozisyonların GreenCheap tarafından bilinmesini sağlamak için, onları `menus` özelliğini kullanarak kaydettirmeniz gerekir.
 
 Her menü konumu, bir tanımlayıcı (ör. `main`) ve kullanıcıya görüntülenecek bir etiket (ör. _Main_) ile tanımlanır.
 
@@ -65,7 +65,7 @@ Her menü konumu, bir tanımlayıcı (ör. `main`) ve kullanıcıya görüntüle
 ```
 
 ### Pozisyonlar (Widgets)
-Widget konumları, kullanıcıların tema işaretlemenizin çeşitli konumlarında widget yayınlamasına olanak tanır. Green Cheap yönetici panelinin _Widgets_ alanında görünürler ve bir widget oluştururken kullanıcı tarafından seçilebilirler.
+Widget konumları, kullanıcıların tema işaretlemenizin çeşitli konumlarında widget yayınlamasına olanak tanır. GreenCheap yönetici panelinin _Widgets_ alanında görünürler ve bir widget oluştururken kullanıcı tarafından seçilebilirler.
 
 Her bir pencere öğesi konumu, bir tanımlayıcı (yani `sidebar`) ve kullanıcıya görüntülenecek bir etiket (yani, _Sidebar_) ile tanımlanır.
 
@@ -183,12 +183,12 @@ Burada, widget konumu `hero` , `position-grid.php` düzen dosyasıyla oluşturul
 <?php endforeach ?>
 ```
 
-## Varsayılan Green Cheap Biçimlendirme
-Green Cheap yönetici paneli, UIkit ön uç çerçevesi kullanılarak oluşturulmuştur. Bu nedenle, statik sayfalar ve blog gibi Green Cheap çekirdek uzantıları, UIkit'ten CSS sınıfları ile işaretleme çıktılar. Bununla birlikte, kendi temalarınızı oluşturmak için hiçbir şekilde UIkit kullanmak zorunda değilsiniz.
+## Varsayılan GreenCheap Biçimlendirme
+GreenCheap yönetici paneli, UIkit ön uç çerçevesi kullanılarak oluşturulmuştur. Bu nedenle, statik sayfalar ve blog gibi GreenCheap çekirdek uzantıları, UIkit'ten CSS sınıfları ile işaretleme çıktılar. Bununla birlikte, kendi temalarınızı oluşturmak için hiçbir şekilde UIkit kullanmak zorunda değilsiniz.
 
-Green Cheap sistem çıktısını biçimlendirmek için, tüm UIkit CSS'sini dahil etmek yerine birkaç sınıf için CSS ekleyebilirsiniz. `Hello` uzantısıyla gelen `theme.css` dosyası gerekli sınıfları zaten içeriyor.
+GreenCheap sistem çıktısını biçimlendirmek için, tüm UIkit CSS'sini dahil etmek yerine birkaç sınıf için CSS ekleyebilirsiniz. `Hello` uzantısıyla gelen `theme.css` dosyası gerekli sınıfları zaten içeriyor.
 
-Green Cheap'in kendi ürettiği işaretlemeyi tamamen değiştirmek isterseniz, sistem görünümü dosyalarının üzerine yazma olanağınız da vardır.
+GreenCheap'in kendi ürettiği işaretlemeyi tamamen değiştirmek isterseniz, sistem görünümü dosyalarının üzerine yazma olanağınız da vardır.
 
 ## Sistem görünümlerinin üzerine yaz
 Sistem görünümü dosyalarının üzerine yazmak için, aşağıdaki tabloda gösterildiği gibi orijinal yapıyı taklit etmek ve şablon dosyalarını oraya koymak için temanızın içinde karşılık gelen klasörler oluşturmanız yeterlidir.

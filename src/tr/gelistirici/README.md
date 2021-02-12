@@ -13,7 +13,7 @@ Kısa bir genel bakış için aşağıdaki listeye bir göz atın.
   installer               // çekirdek, Yükleme / Güncelleme uzantı dosyaları
   modules                 // çekirdek modül dosyaları. Her modülün kendi alt klasörü vardır
   system                  // çekirdek Sistem uzantısı dosyaları
-  vendor                  // Green Cheap tarafından kullanılan harici kütüphaneler
+  vendor                  // GreenCheap tarafından kullanılan harici kütüphaneler
 /packages                 // GreenCheap paketleri ve 3. taraf paketleri
   composer                // paketler ile ilgili dosyalar
   greencheap              // GreenCheap varsayılan paketler
@@ -37,4 +37,4 @@ greencheap.db             // veritabanı dosyası (sadece SQLite kullanılıyors
 
 Her zaman yeni bir projenin yapısına alışmak biraz zaman alsa da, önemli kısımlarda hızlı bir şekilde yolunuzu bulacaksınız. Bilmeniz gereken en önemli şey, geliştirdiğiniz temaların ve uzantıların her zaman `/packages` dizininde, satıcı adınızın bulunduğu bir alt klasörün içinde yer almasıdır. Satıcı adı ise şirket adınız veya genel kullanıcı adınız olabilir, mesela bizim satıcı adımız greencheap diğe geçer.
 
-Ayrıca, ilham almak ve Green Cheap kavramlarını daha iyi anlamak için `/packages/greencheap`'de bulunan resmi paketlere bakmak iyi bir fikirdir. Ayrıca, modül deseni ile neler yapılabileceğine ilişkin örnekleri görmek için `/app/modules` ve `/app/system/modules` modüllerini kontrol edin.
+Ayrıca, ilham almak ve GreenCheap kavramlarını daha iyi anlamak için `/packages/greencheap`'de bulunan resmi paketlere bakmak iyi bir fikirdir. Ayrıca, modül deseni ile neler yapılabileceğine ilişkin örnekleri görmek için `/app/modules` ve `/app/system/modules` modüllerini kontrol edin.

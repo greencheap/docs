@@ -3,9 +3,9 @@
 <p class="uk-article-lead">GreenCheap uygulama kodunu ayarlamak için *Modüller* kullanır. Modül tanımı, önyükleme, yönlendirme ve diğer yapılandırma seçenekleri sağlamak için kullanılır. Burada olayları dinleyebilir, özel sınıflar ve kendi denetleyicilerinizi ekleyebilirsiniz.</p>
 
 ## Tanım: index.php
-Bir modülü yüklemek ve yapılandırmak için Green Cheap'te bir `ModuleManager` vardır. Modül dizininin kökünde bir `index.php` dosyası arayacak ve bir PHP dizisi döndürmesini bekleyecektir. Bu diziyi modüller kodu için önyükleme olarak düşünün.
+Bir modülü yüklemek ve yapılandırmak için GreenCheap'te bir `ModuleManager` vardır. Modül dizininin kökünde bir `index.php` dosyası arayacak ve bir PHP dizisi döndürmesini bekleyecektir. Bu diziyi modüller kodu için önyükleme olarak düşünün.
 
-Bu dizideki doğru özellikleri ayarlayarak, Green Cheap'e modülünüz hakkında bilmesi gereken her şeyi söylersiniz.
+Bu dizideki doğru özellikleri ayarlayarak, GreenCheap'e modülünüz hakkında bilmesi gereken her şeyi söylersiniz.
 
 ```php
 <?php
@@ -21,9 +21,9 @@ return [
 ];
 ```
 
-Bu minimal örnek, Green Cheap tarafından yüklenmek dışında hiçbir şey yapmasa da geçerli bir modül tanımıdır. Bir modül yalnızca içerdiği paket yönetici panelinde etkinleştirildiyse yüklenir.
+Bu minimal örnek, GreenCheap tarafından yüklenmek dışında hiçbir şey yapmasa da geçerli bir modül tanımıdır. Bir modül yalnızca içerdiği paket yönetici panelinde etkinleştirildiyse yüklenir.
 
-**Not:** Green Cheap'in iç yapısını keşfetmeye başlarsanız, birçok yerde aynı modül yapısını göreceksiniz, Green Cheap mimarisinin merkezi bir konsepti.
+**Not:** GreenCheap'in iç yapısını keşfetmeye başlarsanız, birçok yerde aynı modül yapısını göreceksiniz, GreenCheap mimarisinin merkezi bir konsepti.
 
 ## Kullanılabilir Mülkler
 
@@ -36,7 +36,7 @@ Anahtar       | Açıklama                       | Daha Fazlası
 `routes`    | Rota denetleyicileri |
 `permissions`  | İzin adlarını tanımlama ve kaydetme |
 `resources`  | Kaynak kısayollarını kaydetme |
-`events`    | Green Cheap veya diğer modüllerden olayları dinleyin |
+`events`    | GreenCheap veya diğer modüllerden olayları dinleyin |
 `config`    | Varsayılan modül yapılandırması |
 `nodes`    | Site Ağacı için Düğümleri Kaydetme |
 `node`    | Düğüm yapılandırması için varsayılan seçenekler |
@@ -47,7 +47,7 @@ Anahtar       | Açıklama                       | Daha Fazlası
 
 ## Önyükleme kodu
 
-Herhangi bir PHP kodunu çalıştırmak için `main` özelliğine bir geri çağırma işlevi atayabilirsiniz. İşlev, Green Cheap Application kapsayıcı örneğini parametre olarak alır.
+Herhangi bir PHP kodunu çalıştırmak için `main` özelliğine bir geri çağırma işlevi atayabilirsiniz. İşlev, GreenCheap Application kapsayıcı örneğini parametre olarak alır.
 
 ```php
 use GreenCheap\Application;
@@ -71,7 +71,7 @@ Geri arama işlevi atamak ve tüm kodlarınızı doğrudan `index.php` içinde b
 
 ## Özel ad alanlarını kaydetme
 
-Green Cheap tarafından otomatik yüklenecek ad alanlarının ve yolların bir listesini iletin. Yol modülün yoluna göredir, bu nedenle aşağıdaki örnekteki "src", modül paketinin `Packages/VENDOR/PACKAGE/index.php` konumunda olduğu varsayılarak `Packages/VENDOR/PACKAGE/src` konumunda bulunur.
+GreenCheap tarafından otomatik yüklenecek ad alanlarının ve yolların bir listesini iletin. Yol modülün yoluna göredir, bu nedenle aşağıdaki örnekteki "src", modül paketinin `Packages/VENDOR/PACKAGE/index.php` konumunda olduğu varsayılarak `Packages/VENDOR/PACKAGE/src` konumunda bulunur.
 
 ```php
 'autoload' => [
@@ -138,7 +138,7 @@ class MyController {
 ```
 
 ## Kaynak kısayollarını kaydetme
-Yollarla çalışırken daha kısa sürüm olarak kullanılacak önekleri kaydedebilirsiniz. Örneğin, `packages/VENDOR/PACKAGE/views/admin/settings.php`'ye başvurmak için `views:admin/settings.php`'yi kullanın. Green Cheap varsayılan olarak uzantılar ve temalar için birkaç yol kaydeder.
+Yollarla çalışırken daha kısa sürüm olarak kullanılacak önekleri kaydedebilirsiniz. Örneğin, `packages/VENDOR/PACKAGE/views/admin/settings.php`'ye başvurmak için `views:admin/settings.php`'yi kullanın. GreenCheap varsayılan olarak uzantılar ve temalar için birkaç yol kaydeder.
 
 Bu, GreenCheap dosya sistemi her kullanıldığında (yani bir dosya yolu için URL oluştururken veya bir denetleyiciden bir görünüm oluştururken) çalışır.
 
@@ -151,7 +151,7 @@ Bu, GreenCheap dosya sistemi her kullanıldığında (yani bir dosya yolu için 
 ```
 
 ## Etkinlikleri dinleme
-Olaylar Green Cheap çekirdeğinin birkaç noktasında ve potansiyel olarak diğer modüller tarafından tetiklenir. Bir etkinliğin her zaman onu tanımlayan benzersiz bir adı vardır. Geri arama işlevlerini herhangi bir etkinliğe kaydedebilirsiniz.
+Olaylar GreenCheap çekirdeğinin birkaç noktasında ve potansiyel olarak diğer modüller tarafından tetiklenir. Bir etkinliğin her zaman onu tanımlayan benzersiz bir adı vardır. Geri arama işlevlerini herhangi bir etkinliğe kaydedebilirsiniz.
 
 Etkinlik sistemi hakkında daha fazla bilgi için Etkinlikler bölümüne göz atın.
 
@@ -288,7 +288,7 @@ Yönetici panelinin ana navigasyonuna menü öğeleri ekleyebilirsiniz. Bunlar h
 ```
 
 ## Bir ayarlar ekranına bağlantı
-Ayarlar ekranınızı görüntüleyen bir rotaya bağlantı oluşturun. Bu özelliği ayarlamak, Green Cheap'in yönetici paneli listesindeki temanızın veya uzantınızın yanında bir _Settings_ düğmesi oluşturmasını sağlar.
+Ayarlar ekranınızı görüntüleyen bir rotaya bağlantı oluşturun. Bu özelliği ayarlamak, GreenCheap'in yönetici paneli listesindeki temanızın veya uzantınızın yanında bir _Settings_ düğmesi oluşturmasını sağlar.
 
 ```php
 'settings' => '@hello/admin/settings',

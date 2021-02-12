@@ -2,7 +2,7 @@
 
 <p class="uk-article-lead">*Uygulama*, GreenCheap'in bağımlılık konteyneri olarak işlev görür. Uygulama, GreenCheap'in işlevselliğini ve hizmetlerini `Modüller Sayfası` boyunca yapılandırılabilir, genişletilebilir, değiştirilebilir ve erişilebilir kılar.</p>
 
-Green Cheap'de kullanabileceğiniz tüm hizmetler, `Uygulama` örneğinde bağımlılık olarak enjekte edilen özellikler olarak ayarlanır. Örneğin `$app['db']` veritabanı hizmetine erişmenizi sağlar.
+GreenCheap'de kullanabileceğiniz tüm hizmetler, `Uygulama` örneğinde bağımlılık olarak enjekte edilen özellikler olarak ayarlanır. Örneğin `$app['db']` veritabanı hizmetine erişmenizi sağlar.
 
 ## Bir hizmete erişim
 

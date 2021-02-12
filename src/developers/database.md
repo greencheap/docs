@@ -1,4 +1,5 @@
 # Database
+
 <p class = "uk-article-lead"> this episode, configure the database connection, create a table, from extensions, the basics of running database scripts and manually creating database queries are mentioned. </p>
 
 **Note** Recommended way to conveniently map your application data to database tables, GreenCheap Object-relational mapper (ORM) method that is open in its section.

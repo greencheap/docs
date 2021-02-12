@@ -8,7 +8,7 @@
 
 **İzinler** bir kullanıcının gerçekleştirebileceği eylemleri tanımlar. İzin bir adla tanımlanır, örneğin `user: access admin area`. İzin adları açıklayıcı olmalı ve ilgili modülün adıyla başlamalıdır, ör. `user:` kullanıcı modülü için.
 
-**Roller** birkaç kullanıcı hesabını gruplandırır. Aynı role sahip tüm kullanıcılar aynı izinleri paylaşır. Roller, sitenizin içeriğinin öğelerine erişimi yönetmek için de kullanılır. Bir kullanıcı sıfır, bir veya birden fazla role ait olabilir. Bir rolün kendisine atanmış çok sayıda kullanıcı olabilir. Green Cheap varsayılan rolleri **Anonymous**, **Authenticated** ve **Administrator** ile birlikte gelir ve ihtiyacınız olduğu kadar çok şey oluşturmanıza olanak tanır.
+**Roller** birkaç kullanıcı hesabını gruplandırır. Aynı role sahip tüm kullanıcılar aynı izinleri paylaşır. Roller, sitenizin içeriğinin öğelerine erişimi yönetmek için de kullanılır. Bir kullanıcı sıfır, bir veya birden fazla role ait olabilir. Bir rolün kendisine atanmış çok sayıda kullanıcı olabilir. GreenCheap varsayılan rolleri **Anonymous**, **Authenticated** ve **Administrator** ile birlikte gelir ve ihtiyacınız olduğu kadar çok şey oluşturmanıza olanak tanır.
 
 ## İçeriği yalnızca belirli bir role göster
 

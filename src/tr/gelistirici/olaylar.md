@@ -11,11 +11,11 @@ Bu belgede dinleyebileceğiniz mevcut olaylar ve GreenCheap'de bir olay dinleyic
 GreenCheap, sayfa isteğinin yaşam döngüsü boyunca bir dizi etkinlik sağlar:
 
 
-- `boot`: Green Cheap uygulamasının önyükleme aşaması başladı.
+- `boot`: GreenCheap uygulamasının önyükleme aşaması başladı.
 - `request`: Çekirdeğin istek işleme aşaması başladı.
 - `controller`: Bir denetleyici eylemi çağrılmak üzere.
 - `response`: Yanıt tarayıcıya gönderilmek üzere.
-- `terminate`: Green Cheap başvurusunun cevabı başarıyla gönderildi.
+- `terminate`: GreenCheap başvurusunun cevabı başarıyla gönderildi.
 - `exception`: Bir istisna oluştu.
 
 

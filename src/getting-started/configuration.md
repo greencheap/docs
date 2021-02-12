@@ -1,13 +1,13 @@
 # Configuration
-<p class="uk-article-lead">Greencheap configuration file, Green Cheap is created automatically when you install it. If you want to change the configuration settings manually, this article describes the syntax and contents of the file.</p>
+<p class="uk-article-lead">Greencheap configuration file, GreenCheap is created automatically when you install it. If you want to change the configuration settings manually, this article describes the syntax and contents of the file.</p>
 
-Usually, you do not need to deal with the configuration file 'config.php' after it is created by the installer. Normal way to change configuration, Green Cheap is the _ System > Settings page in the admin panel.
+Usually, you do not need to deal with the configuration file 'config.php' after it is created by the installer. Normal way to change configuration, GreenCheap is the _ System > Settings page in the admin panel.
 
-Sometimes edit this file manually, it is necessary and useful, for example when troubleshooting a broken installation or moving an existing Green Cheap installation to a new server.
+Sometimes edit this file manually, it is necessary and useful, for example when troubleshooting a broken installation or moving an existing GreenCheap installation to a new server.
 
 in the code list below, you see an example configuration with the most common settings.
 
-You usually have a single database connection. Example, it contains both examples that show how the configuration works for different database drivers. Only the `default` link will be used by Green Cheap (this example uses `sqlite`).
+You usually have a single database connection. Example, it contains both examples that show how the configuration works for different database drivers. Only the `default` link will be used by GreenCheap (this example uses `sqlite`).
 
 ```php
 'database' => [

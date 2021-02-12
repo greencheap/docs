@@ -1,4 +1,5 @@
 # Widgets
+
 <p class = "uk-article-lead"> Create components to create small pieces of content in different locations of your site. </p>
 
 To determine where to create the content of a widget, the admin panel has a __components__ section to publish the widget at specific locations defined by the theme. Extensions and themes can come with components with no difference in development.

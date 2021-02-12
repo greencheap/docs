@@ -1,10 +1,10 @@
-# Server Configuration.md
-<p class="uk-article-lead">Green Cheap is written in PHP and can run in various web server configurations. Official support for Apache 2.2 + and nginx is available.</p>
+# Server Configuration
+<p class="uk-article-lead">GreenCheap is written in PHP and can run in various web server configurations. Official support for Apache 2.2 + and nginx is available.</p>
 
 ## Apache 2.2+
 Although greencheap should run smoothly on Apache 2.2+ without additional configuration, you may receive a warning message during installation. If you do this, at the root of your greencheap folder you must verify that the `.htaccess` file exists.
 
-**Note** `.htaccess`  file is an Apache configuration file and is hidden on Unix-based systems; therefore, it is easy to overlook when installing the package at startup. If it is not available, copy it from the Green Cheap package.
+**Note** `.htaccess`  file is an Apache configuration file and is hidden on Unix-based systems; therefore, it is easy to overlook when installing the package at startup. If it is not available, copy it from the GreenCheap package.
 
 Your Web server, it is also possible that the server configuration does not allow overriding over an `.htaccess`. In this case, contact your hosting provider and ask them to change the AllowOverride directive.
 
