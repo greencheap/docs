@@ -112,18 +112,17 @@ use Doctrine\DBAL\Schema\Comparator;
 
 // ...
 
-$util    = App::db()->getUtility();
+$util = $app['db']->getUtility();
 $manager = $util->getSchemaManager();
 
-if ($util->tableExists('@my_table')) {
-
-    $tableOld = $util->getTable('@my_table');
-    $table = clone $tableOld;
-
-    $table->addColumn('title', 'string', ['length' => 255]);
-
-    $comparator = new Comparator;
-    $manager->alterTable($comparator->diffTable($tableOld, $table));
+if($util->tableExists('@system_comments')) {
+	$fromTable =  $util->listTableDetails('@system_comments');
+	if (!$fromTable->hasColumn('data')) {
+		$toTable = clone $fromTable;
+		$toTable->addColumn('data', 'json_array' , ['notnull' => false]);
+		$comparator = new Comparator;
+		$manager->alterTable($comparator->diffTable($fromTable, $toTable));
+	}
 }
 
 ```
